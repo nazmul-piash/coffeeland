@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . 'interfaces/IDataWriter.php';
+require_once 'interfaces/IDataWriter.php';
 
 class SQLiteWriter implements IDataWriter {
     private $conn;

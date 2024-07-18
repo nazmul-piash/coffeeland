@@ -1,7 +1,7 @@
 <?php
-require __DIR__ .'interfaces/IDataReader.php';
+require_once 'interfaces/IDataReader.php';
 
-class XMLReader implements IDataReader {
+class XMLRead implements IDataReader {
     private $filePath;
 
     public function __construct($filePath) {

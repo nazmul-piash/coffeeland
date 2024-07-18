@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . 'interfaces/IDataWriter.php';
+require __DIR__ . '\interfaces\IDataWriter.php';
 
 class MongoDBWriter implements IDataWriter {
     private $client;

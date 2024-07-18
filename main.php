@@ -1,14 +1,14 @@
 <?php
-require __DIR__ . '/config/config.php';
-require __DIR__ . '/interfaces/IDataReader.php';
-require __DIR__ . '/interfaces/IDataWriter.php';
+require 'config/config.php';
+require 'interfaces/IDataReader.php';
+require 'interfaces/IDataWriter.php';
 
-$config = include(__DIR__ . '/config/config.php');
+$config = include('config/config.php');
 
 function createReader($config) {
     if ($config['reader'] === 'XMLReader') {
-        require __DIR__ . '/readers/XMLReader.php';
-        return new XMLReader($config['xmlFilePath']);
+        require 'readers/XMLReader.php';
+        return new XMLRead($config['xmlFilePath']);
     } else {
         throw new Exception("Unsupported reader: " . $config['reader']);
     }
@@ -17,7 +17,7 @@ function createReader($config) {
 function createWriter($config) {
     switch ($config['writer']) {
         case 'MySQLWriter':
-            require __DIR__ . '/writers/MySQLWriter.php';
+            require 'writers/MySQLWriter.php';
             $conn = new mysqli(
                 $config['dbConfig']['servername'],
                 $config['dbConfig']['username'],
@@ -26,10 +26,10 @@ function createWriter($config) {
             );
             return new MySQLWriter($conn);
         case 'SQLiteWriter':
-            require __DIR__ . '/writers/SQLiteWriter.php';
+            require 'writers/SQLiteWriter.php';
             return new SQLiteWriter($config['sqliteFilePath']);
         case 'MongoDBWriter':
-            require __DIR__ . '/writers/MongoDBWriter.php';
+            require 'writers/MongoDBWriter.php';
             return new MongoDBWriter($config['mongoConfig']);
         default:
             throw new Exception("Unsupported writer: " . $config['writer']);

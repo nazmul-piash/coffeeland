@@ -1,18 +1,14 @@
 
 <?php
-require __DIR__ . 'interfaces/IDataWriter.php';
+require_once 'interfaces/IDataWriter.php';
 
 class MySQLWriter implements IDataWriter {
     private $conn;
 
-    public function __construct($dbConfig) {
-        $this->conn = new mysqli(
-            $dbConfig['servername'],
-            $dbConfig['username'],
-            $dbConfig['password'],
-            $dbConfig['dbname']
-        );
+    public function __construct($conn) {
+        $this->conn = $conn;
 
+        // Checking connection
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
