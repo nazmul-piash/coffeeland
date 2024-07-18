@@ -4,6 +4,9 @@
 ## Project Overview
 The XML Data Importer is a backend-focused application designed to read data from an XML file and insert it into a MySQL database. This project is built using raw PHP to maintain simplicity and avoid unnecessary complications, making it easier to understand and extend.
 
+### Run file
+bash: php main.php
+
 ## Key Features
 1. **XML Data Reading**: The application reads data from an XML file using a custom XML reader.
 2. **MySQL Data Insertion**: The read data is then inserted into a MySQL database.
