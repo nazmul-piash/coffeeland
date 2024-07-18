@@ -35,3 +35,6 @@ bash: php main.php
 
 ## Conclusion
 The XML Data Importer project demonstrates effective backend development practices using raw PHP to handle XML data processing and MySQL data insertion. Although the project is primarily focused on backend functionality and maintains a simple structure, there is room for improvement, particularly in implementing thorough testing to ensure reliability and robustness.
+
+## References
+Google, GPT-4o, Gpt-3.5, Stack Overflow
