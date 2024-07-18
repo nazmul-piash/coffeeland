@@ -9,7 +9,7 @@ return [
         'password' => '',
         'dbname' => 'feed',
     ],
-    'sqliteFilePath' => __DIR__ . '\..\input\database.sqlite',
+    'sqliteFilePath' => __DIR__ . '\..\input\feed.db',
     'mongoConfig' => [
         'uri' => 'mongodb://localhost:27017',
         'dbname' => 'feed'
