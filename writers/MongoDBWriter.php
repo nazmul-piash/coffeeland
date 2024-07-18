@@ -1,5 +1,5 @@
 <?php
-require_once 'interfaces/IDataWriter.php';
+require __DIR__ . 'interfaces/IDataWriter.php';
 
 class MongoDBWriter implements IDataWriter {
     private $client;
@@ -7,7 +7,7 @@ class MongoDBWriter implements IDataWriter {
 
     public function __construct($mongoConfig) {
         $this->client = new MongoDB\Client($mongoConfig['uri']);
-        $this->collection = $this->client->{$mongoConfig['dbname']}->feed;
+        $this->collection = $this->client->{$mongoConfig['dbname']}->fee;
     }
 
     public function writeData($data) {

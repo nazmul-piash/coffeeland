@@ -1,6 +1,6 @@
 
 <?php
-require_once 'interfaces/IDataWriter.php';
+require __DIR__ . 'interfaces/IDataWriter.php';
 
 class MySQLWriter implements IDataWriter {
     private $conn;
